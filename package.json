@@ -4,14 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vuepress dev docs",
+    "docs:dev": "vuepress dev docs --temp .temp",
     "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yihusitian/summerheart-blog.git"
   },
-  "author": "",
+  "author": "leeho",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/yihusitian/summerheart-blog/issues"
