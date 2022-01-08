@@ -12,7 +12,7 @@ module.exports = {
                   { text: 'Java基础', link: '/java/base/' },
                   { text: 'Java集合框架', link: '/java/collection/' },
                   { text: 'Java虚拟机', link: '/java/jvm/Java发展大事件' },
-                  { text: '多线程编程', link: '/java/multithread/' }
+                  { text: '多线程编程', link: '/java/multithread/Thread之join方法详解' }
                 ]
             },
             {
@@ -44,12 +44,12 @@ module.exports = {
         //侧边栏
         sidebar: {
             '/java/jvm/': getJVMSideBarConfig(),
+            '/java/multithread/': getMultiThreadSideBarConfig()
         }
     }
 }
 
 
-// java-develop-jvm
 function getJVMSideBarConfig() {
     return [
         {
@@ -64,6 +64,21 @@ function getJVMSideBarConfig() {
                 "深入剖析字节码.md",
                 "虚拟机调优.md",
                 "虚拟机面试题.md",
+            ]
+        }
+    ]
+}
+
+function getMultiThreadSideBarConfig() {
+    return [
+        {
+            title: "Java多线程笔记整理",
+            collapsable: false,
+            sidebarDepth: 0,
+            children: [
+                "Thread之join方法详解.md",
+                "并发机制底层实现原理之volatile",
+                "并发机制底层实现原理之synchronized",
             ]
         }
     ]
