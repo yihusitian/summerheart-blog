@@ -7,7 +7,7 @@ join()方法是Thread类中的一个方法，该方法的定义是等待该线�
 当需要指定的几个线程串行执行任务时，可以使用join方法来实现。
 
 ### 代码实例
-```
+```java
     /**
      * 实现：使用join让三个线程顺序执行
      */
@@ -51,7 +51,7 @@ join()方法是Thread类中的一个方法，该方法的定义是等待该线�
     }
 ```
 ### 实例运行结果
-```
+```java
 thread1 is running!
 thread2 is running!
 thread3 is running!
@@ -62,7 +62,7 @@ thread3 is running!
 
 #### 1.Thread.join()方法源码
 
-```
+```java
     //Thread的join方法中调用了另外一个有参数的重载方法
     public final void join() throws InterruptedException {
         //调用同名方法，入参为整数0
@@ -70,7 +70,7 @@ thread3 is running!
     }
 ```
 
-```    
+```    java
     //该方法被synchronized关键字修饰，标识为一个同步方法
     public final synchronized void join(long millis) throws InterruptedException {
         long base = System.currentTimeMillis();
@@ -99,7 +99,7 @@ thread3 is running!
         }
     }
 ```
-```
+```java
     //重载方法，同样synchronized关键字修饰
     public final synchronized void join(long millis, int nanos) throws InterruptedException {
 
@@ -121,13 +121,13 @@ thread3 is running!
     }
 ```
 
-```
+```java
     //isAlive方法为一个本地方法，调用此方法判断当前thread对象是否存活
     public final native boolean isAlive();
 ```
 ---
 #### 2.JVM中线程退出时的Cpp源码
-```
+```c++
 void JavaThread::exit(bool destroy_vm, ExitType exit_type) {
     assert(this == JavaThread::current(), "thread consistency check");
     ...
@@ -138,7 +138,7 @@ void JavaThread::exit(bool destroy_vm, ExitType exit_type) {
     assert(!this->has_pending_exception(), "ensure_join should have cleared");
 ...
 ```
-```
+```c++
 static void ensure_join(JavaThread* thread) {
   // We do not need to grap the Threads_lock, since we are operating on ourself.
   Handle threadObj(thread, thread->threadObj());

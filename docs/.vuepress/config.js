@@ -1,6 +1,9 @@
 module.exports = {
     title: "SummerHeart的博客",
     description: '一位中年大叔的博客',
+    markdown: {
+        lineNumbers: true
+    },
     themeConfig: {
         //导航
         nav: [
